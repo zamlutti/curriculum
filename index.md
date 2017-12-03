@@ -28,7 +28,7 @@ Please look at [README.md](README.md) instead. :green_heart: :blue_heart:
 
 {% endcomment %}
 
-* [Introdução a linguagem Clojure](outline/intro.html)
+* [Intro](outline/intro.html)
 * [Values](outline/simple_values.html)
 * [Data Structures](outline/data_structures.html)
 * [Functions](outline/functions.html)
