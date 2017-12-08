@@ -28,7 +28,8 @@ Please look at [README.md](README.md) instead. :green_heart: :blue_heart:
 
 {% endcomment %}
 
-* [Intro](outline/intro.html)
+* [Intro Functional Programming](outline/fp.html)
+* [Intro Clojure](outline/intro.html)
 * [Values](outline/simple_values.html)
 * [Data Structures](outline/data_structures.html)
 * [Functions](outline/functions.html)
