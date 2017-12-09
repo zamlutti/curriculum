@@ -83,15 +83,14 @@ Introdução a linguagem Clojure
 
 #### Concurrency <button class="link" ng-bind-html="details" ng-model="block23" ng-click="block23=!block23"></button>
 
-> Clojure is known for its concurrency... TODO add examples
-Variables and data structures in Clojure are immutable by default, i.e. they never change in place. Every time a modification is needed, a new object is created. For instance, if you add an element to a list, a new list is created with the new element added, and the old list stays the same.
+> Clojure is known for its concurrency.
+>Variables and data structures in Clojure are immutable by default, i.e. they never change in place. Every time a modification is needed, a new object is created. For instance, if you add an element to >a list, a new list is created with the new element added, and the old list stays the same.
 >This may seem like an inefficient approach, but underneath there is a very efficient sharing of the parts that didn't change, but it's invisible to the programmer. Clojure vectors are in particular efficient in this sense.
-
 {: ng-show="block23" .description}
 
 #### Everything! <button class="link" ng-bind-html="details" ng-model="block24" ng-click="block24=!block24"></button>
 
-> REST APIs, web apps... TODO add more examples
+> REST APIs, web apps...
 {: ng-show="block24" .description}
 </section>
 
@@ -120,7 +119,7 @@ Variables and data structures in Clojure are immutable by default, i.e. they nev
 > Functions do all the hard work in Clojure.
 > `print-str`, `+` and `max` are all functions.
 > When these functions get run, they return some type of value.
-> Clojure functions always return a value. TODO mas tem void tb né?
+> Clojure functions always return a value.
 {: ng-show="block32" .description}
 
 #### Arguments <button class="link" ng-bind-html="details" ng-model="block33" ng-click="block33=!block33"></button>
@@ -198,7 +197,7 @@ Variables and data structures in Clojure are immutable by default, i.e. they nev
 
 * In the bottom REPL pane, try to look up the documentation for a function you have used
 * You can use the `(doc function-name)` command to do this
-* Try `(doc +)` and `(doc forward)` on the REPL
+* Try `(doc +)` and `(doc max)` on the REPL
 * Try other functions we used so far, for example, `-`, `*`, or `doc`
 </section>
 

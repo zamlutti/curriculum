@@ -84,21 +84,6 @@ collections together.
 </section>
 
 <section ng-controller="NarrativeController">
-#### Example <button class="link" ng-bind-html="details" ng-model="block41" ng-click="block41=!block41"></button>
-
-> When there are a couple of turtles,
-> `(turtle-names)` command will return turtle names in the form of a
-> vector.
-{: ng-show="block41" .description}
-
-```clojure
-(turtle-names)
-;=> [:trinity :neo :oracle :cypher]
-```
-</section>
-
-
-<section ng-controller="NarrativeController">
 #### Creation <button class="link" ng-bind-html="details" ng-model="block61" ng-click="block61=!block61"></button>
 
 > The next two functions are used to make new vectors. The `vector`
@@ -145,32 +130,6 @@ be confusing.
 ```
 </section>
 
-<section>
-#### EXERCISE 1: See turtle names
-{: .slide_title .slide}
-
-1. Add a turtle using a piece of code in the file
-  * Go to `walk.clj` file
-  * Add a line: `(add-turtle :neo)` on the last of `walk.clj` file
-  * Select this line and click "Reload Selection"
-2. (Optional) add a turtle using REPL
-  * Type `(add-turtle :oracle)` followed by enter on the bottom REPL pane
-3. See turtle names
-  * Type `(turtle-names)` on the bottom REPL pane and see the result
-</section>
-
-<section>
-#### EXERCISE 2: Make a vector
-{: .slide_title .slide}
-
-* Go to `myproject`'s `core.clj` and start InstaREPL
-* Make a vector of the high temperatures for the next 7 days in the
-  town where you live.
-* Then use the `nth` function to get the high temperature for next
-  Tuesday.
-</section>
-
-
 <section ng-controller="NarrativeController">
 ### Maps
 
@@ -204,21 +163,6 @@ be confusing.
 {:first "Sally" :last "Brown"}
 {:a 1 :b "two"}
 {}
-```
-</section>
-
-<section ng-controller="NarrativeController">
-#### Example <button class="link" ng-bind-html="details" ng-model="block103" ng-click="block103=!block103"></button>
-
-> When turtle received commands such that `forward` or `right`,
-> those return the result as a form of map of map.
-{: ng-show="block103" .description}
-
-```clojure
-(forward 40)
-;=> {:trinity {:length 40}}
-(right 90)
-;=> {:trinity {:angle 90}}
 ```
 </section>
 
@@ -313,99 +257,6 @@ be confusing.
 (update-in mine [:pet :age] - 3)
 ;=> {:pet {:age 2, :name "able"}}
 ```
-</section>
-
-
-<section>
-### Collections of Collections
-
-#### <button class="link" ng-model="block101" ng-click="block101=!block101">Intro</button>
-
-> Simple values such as numbers, keywords, and strings are not the
-> only types of things you can put into collections. You can also put
-> other collections into collections, so you can have a vector of
-> maps, or a list of vectors, or whatever combination fits your data.
-{: ng-show="block101" .description}
-</section>
-
-<section>
-#### Vector of Maps
-
-```clojure
-(state-all)
-;=> [{:trinity {:x -1.7484556000744965E-6, :y 39.99999999999996, :angle 90, :color [106 40 126]}}
-{:neo {:x 21.213202971967114, :y 21.213203899225725, :angle 45, :color [0 64 0]}}
-{:oracle {:x -49.99999999999981, :y -4.3711390001862375E-6, :angle 180, :color [43 101 236]}}]
-
-(def states (state-all))
-;=> #'clojurebridge-turtle.walk/states
-
-(first states)
-;=> {:trinity {:x -1.7484556000744965E-6, :y 39.99999999999996,
-:angle 90, :color [106 40 126]}}
-```
-</section>
-
-<section>
-#### Map of Maps
-
-```clojure
-(def st (first states))
-;=> #'clojurebridge-turtle.walk/st
-
-st
-;=> {:trinity {:x -1.7484556000744965E-6, :y 39.99999999999996,
-;=>            :angle 90, :color [30 30 30]}}
-
-(get st :trinity)
-;=> {:x -1.7484556000744965E-6, :y 39.99999999999996,
-;=>  :angle 90, :color [30 30 30]}
-
-(get-in st [:trinity :angle])
-;=> 90
-```
-</section>
-
-
-<section>
-#### EXERCISE 3: See turtles states
-{: .slide_title .slide}
-
-* Go to `walk.clj` file
-* Try examples of previous two slides on the REPL
-* See what values you get
-
-> Don't forget to hit __enter__ when you type code on the REPL
-
-
-```clojure
-(state-all)
-(def states (state-all))
-(first states)
-(def st (first states))
-st
-(get st :trinity)
-(get-in st [:trinity :angle])
-```
-</section>
-
-<section>
-#### EXERCISE 4: Modeling Yourself
-{: .slide_title .slide}
-
-* Use the `myproject`'s `core.clj` and InstaREPL
-* Make a map representing yourself
-* Make sure it contains your first name and last name
-* Then, add your hometown to the map using [assoc](http://grimoire.arrdem.com/1.6.0/clojure.core/assoc/) or [merge](http://grimoire.arrdem.com/1.6.0/clojure.core/merge/).
-</section>
-
-<section>
-#### EXERCISE 5 [BONUS]: Modeling your classmates
-{: .slide_title .slide}
-
-* First, take the map you made about yourself in previous exercise.
-* Then, create a vector of maps containing the first name, last name and hometown of two or three other classmates around you.
-* Lastly, add your map to their information using [conj](http://grimoire.arrdem.com/1.6.0/clojure.core/conj/).
 </section>
 
 {% comment %}

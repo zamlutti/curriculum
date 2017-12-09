@@ -22,28 +22,6 @@ Flow Control
 * Boolean logic
 </section>
 
-<section ng-controller="NarrativeController">
-### What is flow control?
-{: .slide_title .slide}
-
-#### Decisions how to react <button class="link" ng-bind-html="details" ng-model="block11" ng-click="block11=!block11"></button>
-
-> "Flow control" is the programming term for deciding how to react to
-> a given circumstance. We make decisions like this all the time. *If*
-> it's a nice day out, *then* we should visit the park; *otherwise* we
-> should stay inside and play board games. *If* your car's tank is
-> empty, *then* you should visit a gas station; *otherwise* you should
-> continue to your destination.
-{: ng-show="block11" .description}
-
-#### Testing conditions to react <button class="link" ng-bind-html="details" ng-model="block12" ng-click="block12=!block12"></button>
-
-> Software is also full of these decisions. *If* the user's input is
-> valid, *then* we should save her data; *otherwise* we show an error
-> message. The common pattern here is that you test some condition and
-> react differently based on whether the condition is *true* or *false*.
-{: ng-show="block12" .description}
-</section>
 
 <section ng-controller="NarrativeController">
 ### `if`
@@ -128,30 +106,6 @@ ng-click="block21=!block21"></button>
 ```
 </section>
 
-<section>
-#### EXERCISE 1: Y value within a frame
-{: .slide_title .slide}
-
-* Write a function `y-within-frame` that takes y (vertical position) as an argument.
-* You may use if example in the slide.
-* The function should return the y value that won't exceed 150.
-
-    - See: [x and y in absolute values](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md#x-and-y-in-absolute-values)
-
-```clojure
-;; if example
-(if (< (+ y 40) 150)
-  (+ y 40)
-  -150))
-```
-
-```clojure
-;; usage of y-within-frame function
-(y-within-frame 80)    ;=> 120
-(y-within-frame 180)   ;=> -150
-```
-</section>
-
 <section ng-controller="NarrativeController">
 ### `cond`
 {: .slide_title .slide}
@@ -196,30 +150,6 @@ ng-click="block21=!block21"></button>
 ```
 </section>
 
-<section>
-#### EXERCISE 2: Y value within a frame - part 2
-{: .slide_title .slide}
-
-> The function we wrote in the previous exercise, `y-within-frame`, has
-> a flaw. If the given y value is -1000, the function will return -960.
-> Since y value of the frame bottom is -150, -960 is beyond that.
-> Your turtle will go invisible area. Let's make it real within-frame
-> function using `cond`.
-
-* Write a function `y-within-frame-cond` that takes y (vertical position) as an argument.
-* You may use `cond` example in the slide.
-* The function should return the y value between -150 and 150.
-
-    - See: [x and y in absolute values](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE.md#x-and-y-in-absolute-values)
-
-```clojure
-;; usage of y-within-frame-cond function
-(y-within-frame-cond 200)    ;=> -150
-(y-within-frame-cond -200)   ;=> 150
-(y-within-frame-cond 0)      ;=> 40
-```
-</section>
-
 <section ng-controller="NarrativeController">
 ### Boolean logic with `and`, `or`, and `not`
 {: .slide_title .slide}
@@ -238,23 +168,6 @@ ng-click="block21=!block21"></button>
 > Yes, if either -- or both! -- are. Is this _not_ true? Yes, if it's
 > false.
 {: ng-show="block81" .description}
-</section>
-
-<section ng-controller="NarrativeController">
-### Truthy and falsey table <button class="link" ng-bind-html="details" ng-model="block91" ng-click="block91=!block91"></button>
-
-> `and`, `or`, and `not` work like other functions (they aren't
-> exactly functions, but work like them), so they are in _prefix
-> notation_, like we've seen with arithmetic.
-{: ng-show="block91" .description}
-
-| x     | y     | (`and` x y) | (`or` x y) | (`not` x) | (`not` y) |
-| ----- | ----- | --------- | -------- | ------- | ------- |
-| false | false | false | false | true  | true  |
-| true  | false | false | true  | false | true  |
-| true  | true  | true  | true  | false | false |
-| false | true  | false | true  | true  | false |
-
 </section>
 
 <section ng-controller="NarrativeController">
@@ -298,25 +211,6 @@ ng-click="block21=!block21"></button>
   (if (= ans (true-or-false? op))
       "You won"
       "You lost"))
-```
-</section>
-
-<section>
-#### EXERCISE 3: [Bonus] Complete `true-or-false?` function
-{: .slide_title .slide}
-
-> `true-or-false?` function in previous slide sees only `:and`
-> operation. Add `:or`, `:not` operation in the function.
-
-* Use `core.clj` of `myproject` and InstaREPL
-* Add `(= op :or)` and `(= op :not)` in `cond`
-* For `:not`, choose either x or y for the argument
-
-```clojure
-;; usage of correct? function
-(correct? :and false)   ;=> "You won"
-(correct? :or false)    ;=> "You lost"
-(correct? :not true)    ;=> "You won"  (this may be "You lost")
 ```
 </section>
 

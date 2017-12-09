@@ -47,22 +47,19 @@ Sequences
 #### Results of `first`
 
 ```clojure
-(turtle-names)
-;=> [:trinity :neo :oracle :cypher] ; vector
-(first (turtle-names))
-;=> :trinity                        ; the first item
 
-(:trinity (state))
-;=> {:x 0, :y 0, :angle 90, :color [30 30 30]}  ; map
-(first (:trinity (state)))
-[:x 0]                                          ; the first item
+(range 2 8)
+;=> (2 3 4 5 6 7)
+
+(first (range 2 8))
+;=> 2
 
 (first "Hello, World!")  ; string
 ;=> \H                   ; the first item
 
 (first :trinity)         ; keyword is not seq-able
 ;=> IllegalArgumentException Don't know how to create ISeq from:
-clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
+;=> clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
 ```
 </section>
 
@@ -98,19 +95,8 @@ clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
 
 ```clojure
 ;; doseq example
-(doseq [n (turtle-names)] (forward n 40))
+(doseq [item items] (my-function item))
 ```
-</section>
-
-<section>
-#### EXERCISE 1
-
-* [Turtles Walk](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) (more function study)
-    - section 5 and later
-* [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md) (animation)
-    - step 4 and later
-* [Twinkle Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
-    - `chord` function and later
 </section>
 
 <section ng-controller="NarrativeController">
@@ -132,22 +118,10 @@ clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:528)
 
 ```clojure
 ;; assuming there are multiple turtles
-(def names (turtle-names))
-(dotimes [n (count names)] (right (nth names n) (* 45 n)))
+(def names ["a" "b"])
+(dotimes [n (count names)] (prn n))
 ```
 </section>
-
-<section>
-#### EXERCISE 2
-
-* [Turtles Walk](https://github.com/ClojureBridge/welcometoclojurebridge/blob/master/outline/TURTLE-SAMPLES.md) (more function study)
-    - section 6 and later
-* [Snowflakes](https://github.com/ClojureBridge/drawing/blob/master/curriculum/create-something.md) (animation)
-    - step 5-4 and later
-* [Twinkle Twinkle Little Star](https://github.com/ClojureBridge/tones/blob/master/curriculum/01-piano-chords.md) (making sounds)
-    - complete Twinkle Little Star section
-</section>
-
 
 {% comment %}
 

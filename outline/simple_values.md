@@ -263,7 +263,7 @@ Prefix: (+ 1 2 3 4 5 6 7 8 9)
 > If we had to type the same values over and over, it would be very
 > hard to write a program. What we need are names for values, so we
 > can refer to them in a way we can remember. This is called
-> assignment. 
+> assignment.
 {: ng-show="block161" .description}
 </section>
 
@@ -300,22 +300,6 @@ Prefix: (+ 1 2 3 4 5 6 7 8 9)
 average-fruit-amount
 ;=> 4
 ```
-</section>
-
-<section>
-#### EXERCISE 1: Basic arithmetic
-
-* How many minutes have elapsed since you arrived at the workshop today?
-* Convert this value from minutes to seconds.
-</section>
-
-<section>
-#### EXERCISE 2 [BONUS]: Minutes and seconds
-
-* Convert 1000 seconds to minutes and seconds.
-* The minutes and the seconds will be separate numbers.
-* `(quot x y)` will give you the whole number part of x divided by y.
-* `(rem x y)` will give you the remainder of x divided by y.
 </section>
 
 {% comment %}

@@ -50,11 +50,10 @@ end
 >- always evaluates to the same result in any context. With the same input, a function should always return the same output.
 {: ng-show="block13" .description}
 
-> ds
-``` ruby
+>
+```ruby
 def MyClass
   attr_writer :a
-
   def initialize(x)
     a = x
   end
@@ -63,7 +62,7 @@ def MyClass
   end
 end
 ```
-``` clojure
+```clojure
 (ns my.namespace)
 (defn double[x]
   (* x 2))
@@ -75,4 +74,8 @@ end
 > Functions in a functional language are treated as other elements of the language (numbers, strings, etc.), i.e. they can be stored in a variable, passed to other functions, returned from other functions, and even created at run time. This is often refers to as functions being first class citizens in the language.
 {: ng-show="block14" .description}
 
+</section>
+<section>
+Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
+or go to the [curriculum outline](/curriculum/#/1).
 </section>
