@@ -28,15 +28,15 @@ Please look at [README.md](README.md) instead. :green_heart: :blue_heart:
 
 {% endcomment %}
 
-* [Intro Functional Programming](outline/fp.html)
-* [Intro Clojure](outline/intro.html)
-* [Values](outline/simple_values.html)
-* [Data Structures](outline/data_structures.html)
-* [Functions](outline/functions.html)
-* [Flow Control and Logic](outline/flow_control.html)
-* [Sequences](outline/sequences.html)
+* [Introdução a Programação Funcional](outline/fp.html)
+* [Introdução a Clojure](outline/intro.html)
+* [Valores](outline/simple_values.html)
+* [Estruturas de dados](outline/data_structures.html)
+* [Funções](outline/functions.html)
+* [Controle de fluxo e lógica](outline/flow_control.html)
+* [Sequências](outline/sequences.html)
 
 * Mão na massa
-    - [Ciphers](https://github.com/ClojureBridgeSP/ciphers)
+    - [Cifras](https://github.com/ClojureBridgeSP/ciphers)
 
 </section>
