@@ -18,7 +18,7 @@ Introdução à linguagem Clojure
 {: .slide-title .chapter}
 
 * Por que Clojure?
-* Em que o Clojure é bom?
+* Em que Clojure é bom?
 * Como é o Clojure?
     - Comentários
 * O que é um REPL?
