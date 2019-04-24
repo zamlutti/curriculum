@@ -8,29 +8,32 @@ permalink: /outline/simple_values.html
 
 {% comment %}
 
-http://clojurebridge.github.io/curriculum/outline/simple_values.html
+http://clojurebridgesp.github.io/curriculum/outline/simple_values.html
 
 {% endcomment %}
 
 <section>
-Simple Values
+Valores simples
 ----------------------------------------
 {: .slide-title .chapter}
 
 * Strings
-* Booleans and nil
-* Keywords
-* Numbers
-  - Arithmetic
+* Booleanos e nil
+* Palavras-chaves
+* Números
+  - Aritimética
 
-* Assignment: `def`
+* Atribuições: `def`
 </section>
 
 <section>
-## Simple values
+## Valores simples
 
-#### <button class="link" ng-model="block71" ng-click="block71=!block71">Intro</button>
+#### <button class="link" ng-model="block71" ng-click="block71=!block71">Introdução</button>
 
+> Para poder fazer qualquer coisa numa linguagem de programação, precisamos
+> ter valores para poder fazer algo interessante. Em Clojure, valores simples
+> são números, texto, booleanos, nil e chaves.
 > In order to do anything in a programming language, you need to have
 > values to do stuff with. In Clojure, simple values are numbers,
 > strings, booleans, nil and keywords.
@@ -43,41 +46,42 @@ Simple Values
 
 #### <button class="link" ng-bind-html="details" ng-model="block21" ng-click="block21=!block21"></button>
 
-> What is a string? A string is just a piece of text. To make a
-> string, you enclose it in quotation marks.
-> Look at the last example. A backslash is how we put a quotation mark
-> inside a string. Do not try using single quotes to make a string.
+> O que é uma string? É só um pedaço de texto. Para criar uma string,
+> você coloca algum texto entre aspas. 
+> Olhe o último exemplo. Uma barra invertida é como a gente consegue
+> colocar uma aspa dentro de uma string. Não tente usar aspas simples para
+> criar a string.
 {: ng-show="block21" .description}
 
-> Reference: [String](http://clojurebridge.github.io/community-docs/docs/clojure/string/)
+> Referência: [String](http://clojurebridgesp.github.io/community-docs/docs/clojure/string/)
 {: ng-show="block21" .description}
 
 ```clojure
 "Hello, World!"
-"This is a longer string that I wrote for purposes of an example."
-"Aubrey said, \"I think we should go to the Orange Julius.\""
+"Essa é uma string maior que eu escrevi só pra ter um exemplo legal."
+"Maria disse: \"Acho que a gente deveria ir no Mica.\""
 ```
 </section>
 
 <section ng-controller="NarrativeController">
-### Booleans and nil
+### Booleanos e nil
 {: .slide_title .slide}
 
 #### <button class="link" ng-bind-html="details" ng-model="block31" ng-click="block31=!block31"></button>
 
->A boolean is a true or false value, and you type them just like that,
->`true` and `false`. Often in programming, we need to ask a true or
->false question, like "Is this class in the current semester?" or "Is
->this person's birthday today?" When we ask those questions, we get a
->boolean back.
+> Um booleano é um valor que é verdadeiro ou falso, e você pode usar esses
+> valores com esses nomes em inglês: `true` e `false`, respectivamente.
+> É bastante comum em programação termos a necessidade de fazer uma pergunta
+> de verdadeiro ou falso ou "sim ou não", como "Esse curso é no semestre atual?" ou 
+> "O aniversário desta pessoa é hoje?". Quando fazemos estas perguntas, temos
+> uma resposta que é booleana.
 {: ng-show="block31" .description}
 
-> There is another value `nil`, which behaves like a boolean in terms
-> of __truthiness__.
-> But, `nil` means no value at all and not a boolean
+> Existe um outro valor `nil`, que se comporta como se fosse `false` quando o usamos
+> num contexto booleano. Mas `nil` significa que não existe valor e não é um boolean.
 {: ng-show="block31" .description}
 
-> Reference: [Truthiness](http://clojurebridge.github.io/community-docs/docs/clojure/truthiness/)
+> Referência: [Verdade](http://clojurebridge.github.io/community-docs/docs/clojure/truthiness/)
 {: ng-show="block31" .description}
 
 
@@ -89,38 +93,37 @@ nil
 </section>
 
 <section ng-controller="NarrativeController">
-### Keywords
+### Palavras-chaves
 {: .slide_title .slide}
 
 #### <button class="link" ng-bind-html="details" ng-model="block41" ng-click="block41=!block41"></button>
 
-> Keywords are the strangest of the basic value types. Some computer
-> languages have similar one. However, keywords don’t have a real
-> world analog like numbers, strings, or booleans.
-> You can think of them as a special type of string, one that’s used for
-> labels. They are often used as keys of key-value pair for maps (data
-> structure; will learn later).
+> Palavras-chaves, ou _keywords_ são o tipo básico mais estranho dos valores. Algumas linguagens de programação
+> possuem um conceito similar. No entanto, palavras-chaves não tem um correspondente análogo do mundo real, como
+> números, strings ou booleanos. Você pode pensar que elas são um tipo especial de string, um que é 
+> usado para dar nomes. Em geral são usadas como a chave de um par chave-valor para mapas (uma estrutura
+> de dados; vamos aprender isso depois).
 {: ng-show="block41" .description}
 
 
 ```clojure
-:trinity
-:first
-:last
+:trinta
+:primeiro
+:ultimo
 ```
 </section>
 
 <section ng-controller="NarrativeController">
-### Numbers
+### Números
 
-#### Integers <button class="link" ng-bind-html="details" ng-model="block81" ng-click="block81=!block81"></button>
+#### Inteiros <button class="link" ng-bind-html="details" ng-model="block81" ng-click="block81=!block81"></button>
 
-> Clojure has several different types of numbers.
+> Clojure tem vários tipos de número.
 {: ng-show="block81" .description}
 
-> First up are integers. Integers include zero, the positive whole
-> numbers, and the negative whole numbers, and you write them just
-> like we write them normally.
+> Primeiramente existem os inteiros. Inteiros (ou integer) incluem o zero, todos os números 
+> inteiros positivos e todos os inteiros negativos. E você escreve do mesmo jeito que escreveria
+> normalmente num texto.
 {: ng-show="block81" .description}
 
 ```clojure
@@ -131,10 +134,11 @@ nil
 </section>
 
 <section ng-controller="NarrativeController">
-#### Decimal numbers <button class="link" ng-bind-html="details" ng-model="block91" ng-click="block91=!block91"></button>
+#### Números decimais <button class="link" ng-bind-html="details" ng-model="block91" ng-click="block91=!block91"></button>
 
-> Then we have decimal numbers, which are also called floats. They
-> include any numbers that have a decimal point in them.
+> Também temos os números decimais, que às vezes também são chamados de _floats_ ou números
+> de ponto flutuante. Separamos a parte inteira da parte decimal usando o `.`, e o Clojure
+> já considera aquele número como decimal.
 {: ng-show="block91" .description}
 
 ```clojure
@@ -145,14 +149,15 @@ nil
 </section>
 
 <section ng-controller="NarrativeController">
-#### Ratios <button class="link" ng-bind-html="details" ng-model="block101" ng-click="block101=!block101"></button>
+#### Frações <button class="link" ng-bind-html="details" ng-model="block101" ng-click="block101=!block101"></button>
 
-> Finally, we have fractions, which are also called ratios. Computers
-> cannot perfectly represent all floats, but ratios are always exact.
-> We write them with a slash, like so:
+> Finalmente temos frações, também chamadas de `ratios` ou razões. Computadores
+> não conseguem representar perfeitamente todos os floats, dízimas periódicas por exemplo,
+> mas frações são sempre exatas. Usamos uma barra junto aos números para escrevê-las:
 {: ng-show="block101" .description}
 
-> Note that, just like with pen-and-paper math, the [denominator](http://en.wikipedia.org/wiki/Fraction_%28mathematics%29) of your ratio cannot be equal to `0`.
+> Note que, assim como na matemática, o [denominador](https://pt.wikipedia.org/wiki/Fra%C3%A7%C3%A3o)
+> da fração nunca pode ser `0`.
 {: ng-show="block101" .description}
 
 ```clojure
@@ -162,14 +167,14 @@ nil
 </section>
 
 <section>
-### Arithmetic
+### Aritimética
 {: .slide_title .slide}
 
-#### <button class="link" ng-model="block111" ng-click="block111=!block111">Intro</button>
+#### <button class="link" ng-model="block111" ng-click="block111=!block111">Introdução</button>
 
-> You can add, subtract, multiply, and divide numbers. In Clojure,
-> arithmetic looks a little different than it does when you write it
-> out with pen and paper. Look at these examples:
+> Você pode somar, subtrair, multiplicar e dividir números. Em Clojure,
+> aritimética é um pouquinho diferente do jeito que você escreve normalmente
+> num caderno. Olhe esses exemplos:
 {: ng-show="block111" .description}
 
 ```clojure
@@ -181,70 +186,69 @@ nil
 </section>
 
 <section ng-controller="NarrativeController">
-### Infix vs. prefix notation
+### Notação infixa vs prefixa
 {: .slide-title .slide}
 
 <button class="link" ng-bind-html="details1" ng-model="block121" ng-click="block121=!block121"></button>
 <button class="link" ng-bind-html="details2" ng-model="block122" ng-click="block122=!block122"></button>
 
-> In Clojure, `+`, `-`, `*` and `/` appear before two numbers. This is
-> called _prefix notation_. What you're used to seeing is called
-> _infix notation_, as the arithmetic operator is in-between the two
-> operands.
+> Em Clojure, `+`, `-`, `*` e `/` aparecem antes dos dois números. Isso é chamado
+> de _notação prefixa_. O que estamos acostumados a ver é chamado de 
+> _notação infixa_, onde a operação aritimética está entre os dois operandos.
 {: ng-show="block121" .description}
 
-> Languages such as **JavaScript** use **infix** notation,
-> while **Clojure** only uses **prefix** notation.
-> Prefix notation is useful for many reasons. Look at this example of
-> an infix expression and the prefix equivalent:
+> Linguagens como **JavaScript** usam notação **infixa**, enquanto 
+> **Clojure** usa apenas notação **prefixa**. Notação **prefixa** é 
+> útil em vários casos. Veja esse exemplo de uma expressão infixa e o seu 
+> equivalente em prefixa:
 {: ng-show="block122" .description}
 
 ```clojure
-Infix:  1 + 2 * 3 / 4 + 5 - 6 * 7 / 8 + 9
+Infixa:  1 + 2 * 3 / 4 + 5 - 6 * 7 / 8 + 9
 
-Prefix: (+ (- (+ (+ 1 (/ (* 2 3) 4)) 5) (/ (* 6 7) 8)) 9)
+Prefixa: (+ (- (+ (+ 1 (/ (* 2 3) 4)) 5) (/ (* 6 7) 8)) 9)
 ```
 </section>
 
 <section ng-controller="NarrativeController">
-### Why prefix is better?
+### Por que prefixa é melhor?
 
-#### Explicit precedence <button class="link" ng-bind-html="details" ng-model="block131" ng-click="block131=!block131"></button>
+#### Precedência explicita <button class="link" ng-bind-html="details" ng-model="block131" ng-click="block131=!block131"></button>
 
-> Imagine both are unclear, but notice that in the prefix version,
-> you do not have to ever think about the precedence of operators.
-> Because each expression has the operator before all the operands and
-> the entire expression is wrapped in parentheses, all precendence is
-> explicit.
+> Na expressão anterior as duas versões são um pouco confusas,
+> mas perceba que na versão prefixa você não precisa nem pensar na 
+> ordem de precedência dos operadores. Como cada expressão começa com 
+> o operador antes de qualquer operando e toda a expressão está entre
+> parênteses, todas as precedências estão explícitas.
 {: ng-show="block131" .description}
 
 ```clojure
-Infix:  1 + 2 / 3
-Prefix: (+ 1 (/ 2 3))
+Infixa:  1 + 2 / 3
+Prefixa: (+ 1 (/ 2 3))
 ```
 
-#### Less repetitive <button class="link" ng-bind-html="details" ng-model="block132" ng-click="block132=!block132"></button>
+#### Menos repetição <button class="link" ng-bind-html="details" ng-model="block132" ng-click="block132=!block132"></button>
 
-> Another reason prefix notation can be nice is that it can make long
-> expressions less repetitive.
-> With prefix notation, if we plan to use the same operator on many
-> operands, we do not have to repeat the operator between them.
+> Outra razão pela qual a notação prefixa pode ser legal é que ela pode
+> tornar expressões grandes menos repetitivas. Com notação prefixa, se 
+> precisamos usar o mesmo operador com vários operandos, não precisamos
+> repetir o operador entre eles.
 {: ng-show="block132" .description}
 
 ```clojure
-Infix:  1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9
-Prefix: (+ 1 2 3 4 5 6 7 8 9)
+Infixa:  1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9
+Prefixa: (+ 1 2 3 4 5 6 7 8 9)
 ```
 </section>
 
 <section ng-controller="NarrativeController">
-### Arithmetic with all number types
+### Aritimética com todos os tipos de número
 
 <button class="link" ng-bind-html="details" ng-model="block141" ng-click="block141=!block141"></button>
 
-> So far, we looked at arithmetic operations by integers only.
-> However, we can use floats or ratios for those operations as well.
-> See these examples:
+> Até agora só fizemos operações aritiméticas com inteiros. No entanto
+> podemos usar decimais ou frações também nessas operações, ou mesmo misturar
+> os tipos. Veja estes exemplos:
 {: ng-show="block141" .description}
 
 ```clojure
@@ -256,48 +260,49 @@ Prefix: (+ 1 2 3 4 5 6 7 8 9)
 
 
 <section ng-controller="NarrativeController">
-## Assignment: `def`
+## Atribuições: `def`
 
-#### <button class="link" ng-model="block161" ng-click="block161=!block161">Intro</button>
+#### <button class="link" ng-model="block161" ng-click="block161=!block161">Introdução</button>
 
-> If we had to type the same values over and over, it would be very
-> hard to write a program. What we need are names for values, so we
-> can refer to them in a way we can remember. This is called
-> assignment.
+> Se tivéssemos que digitar os mesmos valores várias e várias vezes, seria
+> bastante difícil escrever um programa. O que precisamos é poder dar nomes
+> a esses valores, assim podemos apenas nos referir a eles de uma maneira fácil
+> de lembrar. Isso é chamado de atribuição.
 {: ng-show="block161" .description}
 </section>
 
 <section ng-controller="NarrativeController">
-#### Assigning names to values: `def`
+#### Dar nomes a valores: `def`
 
 #### <button class="link" ng-bind-html="details" ng-model="block171" ng-click="block171=!block171"></button>
 
-> We can assign a name to value using `def`.
-> When a name is assigned a value, that name is called a *symbol*.
+> Podemos dar um nome a um valor usando `def`. Quando um nome é 
+> atribuído a um valor, esse nome é chamado de *símbolo*.
 {: ng-show="block171" .description}
 
-> Reference: [Assignment def](http://clojurebridge.github.io/community-docs/docs/clojure/def/)
+> Referência: [Atribuição def](http://clojurebridge.github.io/community-docs/docs/clojure/def/)
 {: ng-show="block171" .description}
 
 ```clojure
-(def mangoes 3)
-(def oranges 5)
-(+ mangoes oranges)
+(def mangas 3)
+(def laranjas 5)
+(+ mangas laranjas)
 ;=> 8
 ```
 </section>
 
 <section ng-controller="NarrativeController">
-#### Assign results to symbols <button class="link" ng-bind-html="details" ng-model="block181" ng-click="block181=!block181"></button>
+#### Atribuindo resultados a símbolos <button class="link" ng-bind-html="details" ng-model="block181" ng-click="block181=!block181"></button>
 
-> You can assign more than simple values to symbols. Try the following.
-> Look at the last line, and see how we can use symbols by themselves to refer to a value.
+> Podemos atribuir mais do que valores simples a símbolos. Tente o seguinte.
+> Olhe a última linha e veja como podemos usar os símbolos sozinhos para se referir
+> ao seu valor.
 {: ng-show="block181" .description}
 
 ```clojure
-(def fruit (+ mangoes oranges))
-(def average-fruit-amount (/ fruit 2))
-average-fruit-amount
+(def fruta (+ mangas laranjas))
+(def valor-medio-das-frutas (/ fruta 2))
+valor-medio-das-frutas
 ;=> 4
 ```
 </section>
@@ -310,6 +315,6 @@ instead. :star2:
 {% endcomment %}
 
 <section>
-Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
-or go to the [curriculum outline](/curriculum/#/1).
+Voltar ao <a href="javascript:;" onClick="Reveal.slide(1);">primeiro slide</a>,
+ou ir para o [índice do currículo](/curriculum/#/1).
 </section>
