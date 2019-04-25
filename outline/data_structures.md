@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Vectors and Maps
+title: Vetores e Mapas
 permalink: /outline/data_structures.html
 ---
 
@@ -8,72 +8,71 @@ permalink: /outline/data_structures.html
 
 {% comment %}
 
-http://clojurebridge.github.io/curriculum/outline/data_structures.html
+http://clojurebridgesp.github.io/curriculum/outline/data_structures.html
 
 {% endcomment %}
 
 <section>
-Data Structures
+Estruturas de Dados
 ----------------------------------------
 {: .slide-title .chapter}
 
-* Vectors
-* Maps
+* Vetores
+* Mapas
 </section>
 
 <section>
-### Group of data - Collections
+### Grupo de dados - Coleções
 {: .slide_title .slide}
 
-#### <button class="link" ng-model="block11" ng-click="block11=!block11">Intro</button>
+#### <button class="link" ng-model="block11" ng-click="block11=!block11">Introdução</button>
 
-> So far, we've dealt with discrete pieces of data: one number, one
-string, one value. When programming, it is more often the case that
-you want to work with groups of data.
+> Até agora lidamos com pedaços discretos de dados: um número, uma
+> string, um valor. Em programação, no entanto, é mais comum o caso em que temos
+> que lidar com grupos de dados.
 {: ng-show="block11" .description}
 
-> Clojure has great facilities for working with these groups, or
-*collections*, of data. Not only does it provide four different types
-of collections, but it also provides a uniform way to use all of these
-collections together.
+> Clojure tem ótimas facilidades para trabalhar com esses grupos, ou
+> *coleções* de dados. Não só nos dá quatro tipos diferentes de coleções
+> mas também nos permite acessar de uma maneira uniforme todos esses
+> tipos de coleções junto.
 {: ng-show="block11" .description}
 </section>
 
 <section ng-controller="NarrativeController">
-### Vectors
+### Vetores
 {: .slide_title .slide}
 
-#### Sequential collection <button class="link" ng-bind-html="details" ng-model="block21" ng-click="block21=!block21"></button>
+#### Coleção sequencial <button class="link" ng-bind-html="details" ng-model="block21" ng-click="block21=!block21"></button>
 
-> A vector is a sequential collection of values. A vector may be
-> empty. A vector may contain values of different types.
-> Each value in a vector is numbered starting at 0, that number is
-> called its index. The index is used to refer to each value when
-> looking them up.
+> Um vetor é uma coleção sequencial de valores. Um vetor pode estar vazio.
+> Um vetor pode ter valores de diferentes tipos. Cada valor em um vetor
+> é numerado começando em 0, e esse número é chamado de índice. O índice
+> é usado para consultar cada valor de dentro do vetor quando estivermos
+> procurando algo.
 {: ng-show="block21" .description}
 
-#### Compartment-like structure <button class="link" ng-bind-html="details" ng-model="block22" ng-click="block22=!block22"></button>
+#### Estrutura em divisórias <button class="link" ng-bind-html="details" ng-model="block22" ng-click="block22=!block22"></button>
 
-> To imagine a vector, imagine a box split into some number of
-> equally-sized compartments. Each of those compartments has a number.
-> You can put a piece of data inside each compartment and always know
-> where to find it, as it has a number.
+> Para imaginar um vetor, pense em uma caixa separada em uma quantidade
+> de divisórias de mesmo tamanho. Cada uma dessas divisórias tem um número.
+> Você pode colocar algum dado dentro de cada divisória e sempre saber onde
+> procurar esse dado no número da divisória.
 {: ng-show="block22" .description}
 
-> Note that the numbers start with 0. That may seem strange, but we
-> often count from zero when programming.
+> Note que os números começam em zero. Isso pode parecer estranho, mas
+> no geral em programação começamos a contar do zero.
 {: ng-show="block22" .description}
 
-![Vector](img/vector.png)
+![Vetor](img/vector.png)
 
 </section>
 
 <section ng-controller="NarrativeController">
-#### Syntax <button class="link" ng-bind-html="details" ng-model="block31" ng-click="block31=!block31"></button>
+#### Sintaxe <button class="link" ng-bind-html="details" ng-model="block31" ng-click="block31=!block31"></button>
 
->Vectors are written using square brackets with any number of pieces
->of data inside them, separated by spaces. Here are some examples of
->vectors:
+> Vetores são geralmente escritos entre colchetes `[]` com qualquer quantidade
+> de valores separados por espaços. Estes são alguns exemplos de vetores: 
 {: ng-show="block31" .description}
 
 ```clojure
@@ -84,16 +83,15 @@ collections together.
 </section>
 
 <section ng-controller="NarrativeController">
-#### Creation <button class="link" ng-bind-html="details" ng-model="block61" ng-click="block61=!block61"></button>
+#### Criação <button class="link" ng-bind-html="details" ng-model="block61" ng-click="block61=!block61"></button>
 
-> The next two functions are used to make new vectors. The `vector`
-> function takes any number of items and puts them in a new vector.
-> `conj` is an interesting function that you'll see used with all the
-> data structures. With vectors, it takes a vector and an item and
-> returns a new vector with that item added to the end of the vector.
-> Why the name `conj`? `conj` is short for conjoin, which means to
-> join or combine. This is what we're doing: we're joining the new
-> item to the vector.
+> As duas próximas funções são usadas pra criar novos vetores. A função `vector`
+> recebe um número qualquer de itens e os coloca em um vetor novo. `conj` é 
+> uma função interessante que você verá sendo usada com todas as estruturas
+> de dados. Com vetores, ela recebe um vetor e um item e devolve um novo vetor
+> que tem esse item adicionado ao final dos itens do vetor recebido.
+> Por que o nome `conj`? `conj` é abreviação de conjoin, que significa juntar
+> ou combinar. E é isso que estamos fazendo: Estamos juntando o novo item ao vetor.
 {: ng-show="block61" .description}
 
 ```clojure
@@ -106,16 +104,14 @@ collections together.
 </section>
 
 <section ng-controller="NarrativeController">
-#### Extraction <button class="link" ng-bind-html="details" ng-model="block81" ng-click="block81=!block81"></button>
+#### Extração <button class="link" ng-bind-html="details" ng-model="block81" ng-click="block81=!block81"></button>
 
-> Now, take a look at these four functions. `count` gives us a
-count of the number of items in a vector. `nth` gives us the nth
-item in the vector. Note that we start counting at 0, so in the
-example, calling `nth` with the number 1 gives us what we'd call the
-second element when we aren't programming. `first` returns the first
-item in the collection. `rest` returns all except the first item.
-Try not to think about that and `nth` at the same time, as they can
-be confusing.
+> Agora veja estas quatro funções. `count` nos dá a quantidade de itens
+> que o vetor tem. `nth` nos dá o enézimo item do vetor. Note que começamos
+> a contar do 0, então no exemplo chamar `nth` com o número 1 nos dá o que
+> chamaríamos de segundo elemento se não estivéssemos programando. `first`
+> devolve o primeiro item da coleção. `rest` retorna todos os itens exceto o primeiro.
+> Tente não pensar sobre isso e `nth` ao mesmo tempo, pois pode ser confuso.
 {: ng-show="block81" .description}
 
 ```clojure
@@ -131,32 +127,32 @@ be confusing.
 </section>
 
 <section ng-controller="NarrativeController">
-### Maps
+### Mapas
 
-#### key value pairs <button class="link" ng-bind-html="details" ng-model="block101" ng-click="block101=!block101"></button>
+#### pares de chave-valor <button class="link" ng-bind-html="details" ng-model="block101" ng-click="block101=!block101"></button>
 
->Maps hold a set of keys and values associated with them. You can
->think of it like a dictionary: you look up things using a word (a
->keyword) and see the definition (its value). If you've programmed in
->another language, you might have seen something like maps--maybe
->called dictionaries, hashes, or associative arrays.
+> Mapas são conjuntos de chave e valores associados a elas. Você pode pensar
+> nelas como se fossem um dicionário: você procura por coisas usando uma
+> palavra (uma palavra-chave/keyword) e consegue ver a sua definição (seu valor).
+> Se você já programou em outra linguagem, você pode já ter visto algo parecido 
+> com mapas -- talvez chamados de dicionários, hashes ou arrays associativos.
 {: ng-show="block101" .description}
 
-![Map](img/map.png)
+![Mapa](img/map.png)
 </section>
 
 <section ng-controller="NarrativeController">
-#### Syntax <button class="link" ng-bind-html="details" ng-model="block102" ng-click="block102=!block102"></button>
+#### Sintaxe <button class="link" ng-bind-html="details" ng-model="block102" ng-click="block102=!block102"></button>
 
-> We write maps by enclosing alternating keys and values in curly braces, like so.
+> Para escrever mapas alternamos chaves e valores, colocando chaves `{}` em volta de todas elas.
 {: ng-show="block102" .description}
 
-> Maps are useful because they can hold data in a way we normally
-> think about it. Take our made up example, Sally Brown. A map can
-> hold her first name and last name, her address, her favorite food,
-> or anything else. It's a simple way to collect that data and make it
-> easy to look up. The last example is an empty map. It is a map that
-> is ready to hold some things, but doesn't have anything in it yet.
+> Mapas são útes pois conseguem guardar dados da maneira que normalmente já 
+> pensamos sobre eles. Pense no nosso exemplo hipotético, Sally Brown. Um 
+> mapa pode guardar o seu nome e sobrenome, seu endereço, sua comida favorita
+> ou qualquer outra coisa. É uma forma simples de coletar estes dados e ser fácil
+> de procurar depois. O último exemplo é um mapa vazio. É um mapa que está pronto 
+> pra guardar alguma coisa, mas ainda não tem nada.
 {: ng-show="block102" .description}
 
 ```clojure
@@ -167,9 +163,11 @@ be confusing.
 </section>
 
 <section ng-controller="NarrativeController">
-#### Creation <button class="link" ng-bind-html="details" ng-model="block104" ng-click="block104=!block104"></button>
+#### Criação <button class="link" ng-bind-html="details" ng-model="block104" ng-click="block104=!block104"></button>
 
-> `assoc` and `dissoc` are paired functions: they associate and disassociate items from a map. See how we add the last name "Brown" to the map with `assoc`, and then we remove it with `dissoc`. `merge` merges two maps together to make a new map.
+> `assoc` e `dissoc` são funções complementares: elas associam e desassociam itens em um mapa. 
+> Veja como colocamos o sobrenome "Brown" no mapa com `assoc`, e depois o removemos com `dissoc`.
+> `merge` mistura dois mapas para formar um novo mapa com todos os seus elementos juntos.
 {: ng-show="block104" .description}
 
 ```clojure
@@ -185,17 +183,18 @@ be confusing.
 </section>
 
 <section ng-controller="NarrativeController">
-#### Extraction 1 <button class="link" ng-bind-html="details" ng-model="block105" ng-click="block105=!block105"></button>
+#### Extração 1 <button class="link" ng-bind-html="details" ng-model="block105" ng-click="block105=!block105"></button>
 
-> `count`, every collection has this function. Why do you think the
-> answer is two? `count` is returning the number of associations.
+> `count`, toda coleção tem essa função. Por que você acha que a resposta
+> é dois? `count` nos devolve o número de associações.
 {: ng-show="block105" .description}
 
-> Since map is a key-value pair, the key is used to get a value from a
-> map. One of the ways often used in Clojure is the examples below.
-> We can use a keyword like using a function in order to look
-> up values in a map. In the last example, we supplied the key `:MISS`.
-> This works when the key we asked for is not in the map.
+> Como mapas são pares de chave-valor, a chave é usada para pegar o valor
+> de um mapa. Um dos jeitos mais usados em Clojure são os exemplos abaixo.
+> Podemos usar uma keyword como se fosse uma função para buscar os valores
+> dentro do mapa. No último exemplo, passamos a chave `:INEXISTENTE` como 
+> último argumento. Isso funciona para quando a chave que procuramos não
+> existe no mapa.
 {: ng-show="block105" .description}
 
 ```clojure
@@ -208,17 +207,17 @@ be confusing.
 ;=> nil
 
 
-(get {:first "Sally"} :last :MISS)
-;=> :MISS
+(get {:first "Sally"} :last :INEXISTENTE)
+;=> :INEXISTENTE
 ```
 </section>
 
 <section ng-controller="NarrativeController">
-#### Extraction 2 <button class="link" ng-bind-html="details" ng-model="block106" ng-click="block106=!block106"></button>
+#### Extração 2 <button class="link" ng-bind-html="details" ng-model="block106" ng-click="block106=!block106"></button>
 
-> Then we have `keys` and `vals`, which are pretty simple: they return
-> the keys and values in the map. The order is not guaranteed, so we
-> could have gotten `(:first :last)` or `(:last :first)`.
+> Também temos `keys` e `vals`, que são bem simples: retornam as chaves
+> e os valores do mapa. A ordem não é garantida, então poderiamos ter
+> como resultado `(:first :last)` ou `(:last :first)`
 {: ng-show="block106" .description}
 
 ```clojure
@@ -231,16 +230,15 @@ be confusing.
 </section>
 
 <section ng-controller="NarrativeController">
-#### Update <button class="link" ng-bind-html="details" ng-model="block110" ng-click="block110=!block110"></button>
+#### Atualização <button class="link" ng-bind-html="details" ng-model="block110" ng-click="block110=!block110"></button>
 
-> After the creation, we want to save a new value associated to the
-> key. The `assoc` function can be used by assigning a new value to
-> the existing key.
-> Also, there's handy function `update`. The function takes map and
-> a key with a function. The value of specified key will be the first
-> argument of the given function.
-> The `update-in` function works like `update`, but takes a vector of keys
-> to update at a path to a nested map.
+> Após a criação, queremos salvar um novo valor associado à chave. 
+> A função `assoc` pode ser usada para associar um novo valor a uma chave
+> já existente. Também existe uma função útil chamada `update`. Esta 
+> função recebe o mapa e a chave com uma função. O valor da chave especificada
+> vai ser o primeiro argumento da função passada.
+> A função `update-in` funciona como a `update`, mas recebe um vetor de
+> chaves para atualizar um caminho dentro de um mapa aninhado.
 {: ng-show="block110" .description}
 
 ```clojure
@@ -267,6 +265,6 @@ instead. :star2:
 {% endcomment %}
 
 <section>
-Return to the <a href="javascript:;" onClick="Reveal.slide(1);">first slide</a>,
-or go to the [curriculum outline](/curriculum/#/1).
+Voltar ao <a href="javascript:;" onClick="Reveal.slide(1);">primeiro slide</a>,
+ou ir para o [índice do currículo](/curriculum/#/1).
 </section>
