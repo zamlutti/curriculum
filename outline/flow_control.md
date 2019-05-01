@@ -61,7 +61,7 @@ ng-click="block21=!block21"></button>
 </section>
 
 <section ng-controller="NarrativeController">
-#### exemplos de `if`
+#### Exemplos de `if`
 
 ```clojure
 (if (> 3 1)
