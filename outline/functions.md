@@ -32,7 +32,7 @@ Funções
 #### <button class="link" ng-model="block11" ng-click="block11=!block11">Intro</button>
 
 > Você já viu algumas funções, como `count`, `conj`, `first` e `rest`.
-> Toda a aritimética que fizemos usou funções também: `+`, `-`, `*`, and `/`. 
+> Toda a aritimética que fizemos usou funções também: `+`, `-`, `*`, e `/`. 
 > O que significa ser uma função então?
 {: ng-show="block11" .description}
 
