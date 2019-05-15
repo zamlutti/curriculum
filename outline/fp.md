@@ -25,7 +25,6 @@ http://clojurebridgesp.github.io/curriculum/outline/fp.html
 #### Imutabilidade <button class="link" ng-bind-html="details" ng-model="block12" ng-click="block12=!block12"></button> <button class="link" ng-bind-html="details2" ng-model="block12e" ng-click="block12e=!block12e"></button>
 
 >O Benefício da imutabilidade é saber mais facilmente o que está acontecendo no programa, já que cada valor que o programa referencia é sempre o mesmo de quando ele foi originalmente criado. Também torna mais fácil adicionar concorrência já que há bem menos necessidade de gerenciar atualizações simultâneas, e bem menos necessidade de usar travas (locks) nos valores. De fato, um dos principais objetivos do design do Clojure é a facilitação de programação concorrente com o mínimo de locks.
-
 {: ng-show="block12" .description}
 
 >
