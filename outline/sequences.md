@@ -82,7 +82,7 @@ Sequências
 <button class="link" ng-bind-html="details1" ng-model="block31" ng-click="block31=!block31"></button>
 <button class="link" ng-bind-html="details2" ng-model="block32" ng-click="block32=!block32"></button>
 
-> O `doseq` (pra **rodar uma sequencia**) é uma das funções bastante usadas para sequências, e funciona de
+> O `doseq` (pra **rodar uma sequência**) é uma das funções bastante usadas para sequências, e funciona de
 > forma bem similar à função `map`. Esta função repetidamente avalia o conteúdo
 > passado para cada elemento da sequência.
 {: ng-show="block31" .description}
