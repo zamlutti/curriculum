@@ -110,15 +110,15 @@ Introdução à linguagem Clojure
 
 #### Parênteses <button class="link" ng-bind-html="details" ng-model="block31" ng-click="block31=!block31"></button>
 
-> Note os parênteses. Parêntesis cercam as instruções para o computador no Clojure.
-> O parênteses da esquerda é o início da instrução, e o parênteses da direita correspondente
-> é o final desta instrução. Em geral códigos em Clojure têm muitos parêntesies aninhados, ou 
+> Note os parênteses. Parênteses cercam as instruções para o computador no Clojure.
+> O parêntese da esquerda é o início da instrução, e o parêntese da direita correspondente
+> é o final desta instrução. Em geral códigos em Clojure têm muitos parênteses aninhados, ou 
 > em outras palavras, instruções cercadas aninhadas.
 {: ng-show="block31" .description}
 
 #### Funções <button class="link" ng-bind-html="details" ng-model="block32" ng-click="block32=!block32"></button>
 
-> Logo depois dos parêntheses, vemos a _função_.
+> Logo depois dos parênteses, vemos a _função_.
 > Funções fazem todo o trabalho pesado no Clojure.
 > `print-str`, `+` e `max` são ambos funções.
 > Quando estas funções são executadas, elas devolvem algum tipo de valor.
