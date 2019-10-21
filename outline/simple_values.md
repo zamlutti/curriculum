@@ -34,9 +34,6 @@ Valores simples
 > Para poder fazer qualquer coisa numa linguagem de programação, precisamos
 > ter valores para poder fazer algo interessante. Em Clojure, valores simples
 > são números, texto, booleanos, nil e chaves.
-> In order to do anything in a programming language, you need to have
-> values to do stuff with. In Clojure, simple values are numbers,
-> strings, booleans, nil and keywords.
 {: ng-show="block71" .description}
 </section>
 
