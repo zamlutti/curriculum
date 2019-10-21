@@ -1,6 +1,6 @@
-## Data Structures - Vector
+## Estrutura de dados - Vetor
 
-### Creating a vector
+### Criando um vetor
 
 ```clj
 (vector 5 10 15)
@@ -9,7 +9,7 @@
 []
 ```
 
-#### Functions for vectors
+#### Funções para vetores
 
 ```clj
 (vector? [5 10 15])
@@ -31,9 +31,9 @@
 ;=> 5
 ```
 
-## Data Structures2 - Keyword, Maps
+## Estrutura de Dados 2 - Keyword, Mapas
 
-#### Creating a map
+#### Criando um mapa
 
 ```clj
 {:first "Sally" :last "Brown"}
@@ -42,89 +42,89 @@
 ```
 
 
-#### Functions for Maps
+#### Funções para Mapas
 
 ```clj
-; determine if value is a map
+; determina se o valor é um mapa
 (map? {:first "Sally" :last "Brown"})
 ;=> true
 
-; using keyword :first get the value
+; recupera o valor ao usar a keyword :first
 (get {:first "Sally" :last "Brown"} :first)
 ;=> "Sally"
 
-; using keyword :first get the value and return :MISS if key doesn't exist in map
+; recupera o valor ao usar a keyword :first e retorna :MISSse a chave não existe no mapa
 (get {:first "Sally"} :last :MISS)
 ;=> :MISS
 
-; add a key/value to the map
+; adiciona uma chave/valor ao mapa
 (assoc {:first "Sally"} :last "Brown")
 ;=> {:first "Sally", :last "Brown"}
 
-; remove (disassociate) the key/value of :last
+; remove (desassocia) a chave/valor de :last
 (dissoc {:first "Sally" :last "Brown"} :last)
 ;=> {:first "Sally"}
 
-; merge two maps
+; faz o merge de dois mapas
 (merge {:first "Sally"} {:last "Brown"})
 ;=> {:first "Sally", :last "Brown"}
 
-; get number of key/value pairs in this map
+; recupera a quantidade de pares chave/valor presentes no mapa
 (count {:first "Sally" :last "Brown"})
 ;=> 2
 
-; get all the keys in this map
+; recupera todas as chaves presentes no mapa
 (keys {:first "Sally" :last "Brown"})
 ;=> (:first :last)
 
-; get all the values in this map
+; recupera todos os valores presentes no mapa
 (vals {:first "Sally" :last "Brown"})
 ;=> ("Sally" "Brown")
 ```
 
-## Defining Functions
+## Definindo Funções
 
 ```clj
-(defn function-name
-  "description of function, optional"
+(defn nome-da-funcao
+  "descrição da função, opcional"
   [param1 param2]
-  (function-body))
+  (corpo-da-funcao))
 ```
 
-* Functions that return true or false--called predicates--usually end in ?
-* map and reduce - Functions that take other functions
+* Funções que retornam true ou false--chamados predicados--normalmente terminam em `?`
+* map e reduce - Funções que recebem outras funções
 
-## Map and Reduce
+## Map e Reduce
 
 ```clj
-; apply a function to every element in a collection
+; aplica a função a todos os elementos presentes em uma coleção
 (map inc [1 2 3 4])
 ;=> (2 3 4 5)
-; Similar to [(inc 1) (inc 2) (inc 3) (inc 4)]
+; Semelhante a [(inc 1) (inc 2) (inc 3) (inc 4)]
 ```
-**`map`** takes a function and a collection, then applies the function to each element in the collection in order. It returns the new collection.
+**`map`** recebe uma função e uma coleção, então aplica a função a cada elemento presente na coleção respeitando a ordem. Isso retorna uma nova coleção.
 
 ```clj
-; reduce a collection to one value using a function
+; faz um reduce (transforma, converte, simplifica) de uma coleção para um valor usando uma função
 (reduce + [1 3 5 7])
 ;=> 16
-; Similar to (+ 1 3) ;=> 4
-;            (+ 4 5) ;=> 9
-;            (+ 9 7) ;=> 16
+; Semelhante a (+ 1 3) ;=> 4
+;              (+ 4 5) ;=> 9
+;              (+ 9 7) ;=> 16
 ```
 
-**`reduce`** takes a function and a collection. First, it applies the function to the first element and the second element, then it applies the function to the *result* of that, plus the third element. It continues rolling up the results until it gets to the last thing in the collection.
+**`reduce`** recebe uma função e uma coleção. Primeiro, a função é aplicada ao primeiro e segundo elemento juntos, depois a função é aplicada ao *resultado* da aplicação anterior com o terceiro elemento. Os resultados vão sendo utilizados até chegar ao último valor da coleção.
 
 
-## Flow Control
+## Controle de Fluxo
 
 ```clj
-(if conditional-expression
-  expression-to-evaluate-when-true
-  expression-to-evaluate-when-false)
+(if expressao-condicional
+  expressao-para-usar-quando-for-true
+  expressao-para-usar-quando-for-false)
 ```
 
-## Boolean logic with and, or and not
+## Lógica booleana com and, or e not
 
 | x     | y     | (and x y) | (or x y) | (not x) | (not y) |
 | ----- | ----- | --------- | -------- | ------- | ------- |
@@ -134,12 +134,12 @@
 | false | true  | false | true  | true  | false |
 
 ## let 
-Assigning names to values inside of functions
+Atribuir nomes a valores dentro de funções
 
 ```clj
-(let [first-name (:first-name user)            ; assign to `first-name`
-      message (str "Hello, " first-name "!")]  ; assign to `message`
-  (println message))                           ; do something with `message`
+(let [primeiro-nome (:primeiro-nome usuario)            ; atribui a `primeiro-nome`
+      mensagem (str "Olá, " primeiro-nome "!")]         ; atribui a `mensagem`
+  (println mensagem))                                   ; faz algo com `mensagem`
 ```
 
 
