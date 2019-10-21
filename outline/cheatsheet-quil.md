@@ -1,63 +1,61 @@
 # Quil Cheatsheet
 
-## Shapes -- (these only work in the draw function!)
+## Formas -- (os comandos só funcionam nas funções de desenho!)
 
 ```clj
 (line x1 y1 x2 y2)
 ```
 
-Draws a line (a direct path between two points) to the screen. `x1`, `y1`,
-`x2`, and `y3` are all numbers which are being used as coordinates, or pixels
-from the top left on your screen.
+Desenha uma linha (uma reta entre dois pontos) na tela. `x1`, `y1`,
+`x2`, e `y3` são todos número usados como coordenadas, ou pixels a partir do canto superior esquerdo de sua tela.
 
 ```clj
-(rect x y width height)
+(rect x y largura altura)
 ```
 
-Draws a rectangle to the screen. `x` and `y` are coordinates. `width` and
-`height` are how big the box is, again in numbers.
-
+Desenha um retângulo na tela. `x` e `y` sãp coordenadas. `largura` e
+`altura` são quão grande a área é, novamente, em números.
 ```clj
-(ellipse x y width height)
+(ellipse x y largura altura)
 ```
 
-Draws an ellipse (oval) in the display window.
+Desenha uma elipse (oval) na tela.
 
-## Color
+## Cor
 
 ```clj
 (color r g b a)
 ```
 
-A color consists of four values. The first three values (red, green, blue in
-values from `0` to `255`) will give a color. Provide a fourth value to set the
-opacity. `(color 0 0 255 128)`, for example, is half-transparent blue.
+Uma cor consiste em quatro valores. Os três primeiros valores (vermelho, verde, azul 
+em valores que vão de `0` a `255`) vão gerar uma cor. Forneça um quarto valor para definir a
+opacidade. `(color 0 0 255 128)`, por exemplo, é um azul com meia transparência.
 
 ```clj
 (background color)
 ```
 
-This sets the whole canvas to one color. Great for erasing the screen every
-draw.
+Define toda a área de coloração para uma cor. Ótimo para apagar a tela a cada
+desenho.
 
 ```clj
 (fill color)
 ```
 
-This sets the fill of shapes which are painted after calling this function.
+Define o preenchimento de formas que são coloridas após a chamada dessa função.
 
 ```clj
 (stroke color)
 ```
 
-This sets a stroke, a border around the shapes painted after.
+Define um traço, uma borda ao redor de formas pintadas depois.
 
 ```clj
 (no-fill)
 (no-stroke)
 ```
 
-These disable the fill and/or stroke of shapes to be drawn. For example:
+Desabilita o preenchimeto e/ou traço de formas que serão desenhadas. Por exemplo:
 
 ```clj
 (background (color 255 0 0))
@@ -65,46 +63,44 @@ These disable the fill and/or stroke of shapes to be drawn. For example:
 (ellipse 100 100 30 30)
 ```
 
-## Text
+## Texto
 
 ```clj
-(text your-text x y)
+(text seu-texto x y)
 ```
 
-This displays your text on the screen at certain coordinates.
+Exibe seu texto na tela em uma coordenada específica.
 
 ## Mouse
 
-These are useful functions to get values from your mouse. Great if you want
-move things on your screen.
+Essas são funções úteis para recuperar valores do seu mouse. Ótimas se você quer move coisas em sua tela.
 
 ```clj
-(mouse-x) ;=> number
-(mouse-y) ;=> number
+(mouse-x) ;=> número
+(mouse-y) ;=> número
 (mouse-pressed?) ;=> true/false
 ```
 
-What do you think this does?
+O que você acha que isso faz?
 
 ```clj
 (ellipse (mouse-x) (mouse-y) 30 30)
 ```
 
-## Time
+## Tempo
 
 ```clj
-(frame-count) ;=> number
+(frame-count) ;=> número
 ```
 
-The number of frames displayed since the program started. Give it a try while
-wrapping it in `(mod num div)` a modulo function. For example:
+O número de frames exibidos a partir do início do programa. Tente enquanto
+engloba isso em `(mod num div)` uma função módulo. Pro exemplo:
 
 ```clj
 (ellipse 100 100 (mod (frame-count) 30) (mod (frame-count) 30))
 ```
 
-## More Quil functions
+## Mais funções Quil
 
-The functions mentioned above are just a few simple ones to get you started.
-The [API documentation](http://quil.info/api) lists all Quil's functions, of
-which there are many!
+As funções mencionadas acima são apenas algumas simples para você dar início.
+A [documentação API](http://quil.info/api) lista todas as funções de Quil, que são muitas!
